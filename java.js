@@ -14,7 +14,7 @@ function add()
         let li=document.createElement("li");
         li.innerHTML=inputb.value;
         list.appendChild(li);
-       // li.classList.add('before');
+      
         
         li.addEventListener("click", checked)
      }
