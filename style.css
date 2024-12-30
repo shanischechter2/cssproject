@@ -26,7 +26,7 @@ img{
   }
 }
 .a{
-    background: rgb(255, 55, 0);
+    background-color: #a7eef9;
    
     padding: 20px;
     box-sizing: border-box;
@@ -46,7 +46,7 @@ img{
     margin: 20px;
 }
 .a:hover{
-    background-color: aqua;
+    background-color: #267f8c;
     transform: translateY(-20px) ;
    transition: all 0.3s;
 
@@ -54,6 +54,7 @@ img{
 input.b {
      transform: scale(3);
      margin: 50px;
+     font-size: 20px;
      padding: 20px;
 }
  input.b + label{
@@ -86,15 +87,26 @@ ul li{
    
     background: rgb(254, 151, 251);
 }
-.row{
+/* .row{
     display: flex;
     align-items: center;
     border-radius: 30px;
     padding-left: 20px;
-   font-size: 70px;
+  
+} */
+#n:focus{
+    background-color: #a7eef9;
+}
+#n{
+    font-size: 20px;
+}
+button{
+    background-color: #267f8c;
+      font-size: 20px;
 }
 
  ul.af ~ div {
     margin: 5px;
     background: blue;
+    font-size: 62px;
 }
