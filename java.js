@@ -1,18 +1,23 @@
 const inputb=document.getElementById("n");
 const list=document.getElementById("listCon");
+const isch = document.getElementById("isch");
+const state = { v: false };
 
-const isch=document.getElementById("isch");
-
-isch.addEventListener("click", function() {
-
-    if (isch.checked) {
-        isch.checked = true;
-       
+isch.addEventListener("mousedown", (event) => {
+    event.preventDefault(); 
+    
+    if (state.v) {
+        isch.checked = false; 
+        state.v = false;
     } else {
-        // Set it to checked when it is unchecked
-        isch.checked = false;
+      
+        isch.checked = true;
+        state.v = true;
     }
-    console.log(isch.checked);
+});
+
+isch.addEventListener("click", (event) => {
+    event.preventDefault(); 
 });
    
 
@@ -48,7 +53,7 @@ function add()
             const centerY = containerHeight / 2;
 
             
-            const radius = Math.min(centerX, centerY) - 50; 
+            const radius = Math.min(centerX, centerY) - 60; 
 
            
             const angleIncrement = (2 * Math.PI) / count;
@@ -57,11 +62,11 @@ function add()
                 const div = document.createElement("div");
 
                 
-                const isCenter = Math.random() < 0.4; 
+                const isCenter = Math.random() < 0.3; 
 
                 if (isCenter) {
-                    div.style.top = `${centerY - 60}px`; 
-                    div.style.left = `${centerX - 60}px`;
+                    div.style.top = `${centerY-60}px`; 
+                    div.style.left = `${centerX-60 }px`;
                 } else {
                     
                     const angle = angleIncrement * i;
@@ -81,7 +86,7 @@ function add()
         }
 
      
-        addDivs(10);
+        addDivs(15);
        
 
         function addDivs2(count) {
@@ -90,60 +95,53 @@ function add()
             const containerHeight = container.offsetHeight;
             
             const vertices = [
-                { x: containerWidth / 2, y: 100 }, // Top vertex
-                { x: 50, y: containerHeight - 100 }, // Bottom left vertex
-                { x: containerWidth - 100, y: containerHeight - 100 } // Bottom right vertex
+                { x: containerWidth / 2, y: 100 }, 
+                { x: 100, y: containerHeight - 100 },
+                { x: containerWidth - 100, y: containerHeight - 100 } 
             ];
-            
-            // Function to generate random integer between min and max
+   
             function getRndInteger(min, max) {
                 return Math.floor(Math.random() * (max - min + 1)) + min;
             }
-            
-            // Loop through the number of divs you want to add
+      
             for (let i = 0; i < count; i++) {
                 const div = document.createElement("div");
                 
-                // Calculate the size of the div
+             
                 const divSize = getRndInteger(50, 100);
-        
-                // Decide whether to place the div on the vertices or inside the triangle
-                const isVertex = Math.random() < 0.6;
+                //const isVertex = Math.random() < 0.6;
                 
                 if (i<=3) {
                     const vertex = vertices[i % 3]; 
-                    div.style.top = `${vertex.y - divSize / 2}px`;
-                    div.style.left = `${vertex.x - divSize / 2}px`;
+              
+                    div.style.top = `${vertex.y - divSize}px`;
+                    div.style.left = `${vertex.x - divSize}px`;
                 } else {
-                    // Randomly place div inside the triangle using barycentric coordinates
+             
                     let r1 = Math.random();
                     let r2 = Math.random();
-                    
-                    // If r1 + r2 is greater than 1, adjust them so they stay inside the triangle
+                  
                     if (r1 + r2 > 1) {
                         r1 = 1 - r1;
                         r2 = 1 - r2;
                     }
         
-                    // Barycentric coordinates calculation
                     const x = r1 * vertices[0].x + r2 * vertices[1].x + (1 - r1 - r2) * vertices[2].x;
                     const y = r1 * vertices[0].y + r2 * vertices[1].y + (1 - r1 - r2) * vertices[2].y;
         
-                    div.style.top = `${y - divSize / 2}px`;
-                    div.style.left = `${x - divSize / 2}px`;
+                    div.style.top = `${y - divSize }px`;
+                    div.style.left = `${x - divSize }px`;
                 }
         
-                // Set the size of the div
                 div.style.width = `${divSize}px`;
                 div.style.height = `${divSize}px`;
         
-                // Append the div to the container
                 container.appendChild(div);
             }
         }
     
 
      
-        addDivs2(10);
+        addDivs2(15);
 
  
