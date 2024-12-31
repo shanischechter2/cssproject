@@ -46,17 +46,16 @@
     transform: rotate(360deg);
   }
 }
-.a{
-    /* background-color: #a7eef9; */
-    position: relative; /* Make .a the reference for absolute positioning */
+.circle{
+    position: relative;
     width: 500px;
     height: 500px;
     
-    overflow: hidden; /* Prevent child elements from overflowing */
+    overflow: hidden;
     border-radius: 50%;
   
 }
-.a > div {
+.circle > div {
     position: absolute;
    
     background: #a7eef9;
@@ -64,12 +63,12 @@
     border-radius: 0%;
 }
 
-.a > div:hover {
+.circle > div:hover {
     background-color: #267f8c;
     transform: translateY(-20px) ;
    transition: all 0.3s;
 }
-.c{
+.triangular{
    
     position: relative; 
     width: 500px;
@@ -83,7 +82,7 @@
   
   
 }
-.c > div {
+.triangular > div {
     position: absolute;
    
     background: #f9a7a7;
@@ -91,7 +90,7 @@
     border-radius: 0%;
 }
 
-.c > div:hover {
+.triangular> div:hover {
     background-color: #404a4b;
     transform: translateY(-20px) ;
    transition: all 0.3s;
@@ -112,25 +111,19 @@
     height: 200px;
     margin: 20px;
 }
-/* .a:hover{
-    background-color: #267f8c;
-    transform: translateY(-20px) ;
-   transition: all 0.3s;
-
-} */
-input.b {
+input.inputb {
      transform: scale(3);
      margin: 50px;
      font-size: 20px;
      padding: 20px;
 }
- input.b + label{
+ input.inputb + label{
    font-size: 50px;
    padding: 20px;
    margin: 20px;
     
 }
- input.b:checked + label{
+ input.inputb:checked + label{
     width: 100px; 
     background-color: rgb(255, 153, 235);           
     height: 100px;
@@ -156,10 +149,10 @@ ul li{
     background: rgb(254, 151, 251);
 }
 
-#n:focus{
+#inputval:focus{
     background-color: #a7eef9;
 }
-#n{
+#inputval{
     font-size: 20px;
 }
 button{
@@ -167,7 +160,7 @@ button{
       font-size: 20px;
 }
 
- ul.af ~ div {
+ ul.list ~ div {
     margin: 5px;
     background: blue;
     font-size: 62px;

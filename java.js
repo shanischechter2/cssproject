@@ -1,4 +1,4 @@
-const inputb=document.getElementById("n");
+const inputb=document.getElementById("inputval");
 const list=document.getElementById("listCon");
 const isch = document.getElementById("isch");
 const state = { v: false };
@@ -45,7 +45,7 @@ function add()
         }
 
         function addDivs(count) {
-            const container = document.querySelector('.a');
+            const container = document.querySelector('.circle');
             const containerWidth = container.offsetWidth;
             const containerHeight = container.offsetHeight;
 
@@ -90,7 +90,7 @@ function add()
        
 
         function addDivs2(count) {
-            const container = document.querySelector('.c');
+            const container = document.querySelector('.triangular');
             const containerWidth = container.offsetWidth;
             const containerHeight = container.offsetHeight;
             
